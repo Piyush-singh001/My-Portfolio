@@ -30,14 +30,13 @@ function MyName() {
               fontSize: "16px",
             }}
             variant="contained"
-            endIcon={<IoIosSend className="w-20 bg-slate-50" />}
           >
-            Contact Me
+            Contact Me {<IoIosSend size={24} className="ml-4" />}
           </button>
         </a>
       </div>
       <div className="mt-60 text-gray-500 flex">
-        <CiDesktopMouse1 />
+        <CiDesktopMouse1 size={24} />
         Scroll Down <FaArrowDown className="ml-1 mt-1" />
       </div>
     </div>

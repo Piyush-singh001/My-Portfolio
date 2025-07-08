@@ -11,7 +11,10 @@ function SocalMedia() {
         rel="noopener noreferrer"
         className="social-link  text-gray-500 hover:text-black transition-all duration-700"
       >
-        <FaLinkedin />
+        <FaLinkedin
+          size={24}
+          className=" social-link text-gray-500 hover:text-black transition-all duration-700"
+        />
       </a>
       <a
         href="
@@ -20,7 +23,10 @@ function SocalMedia() {
         rel="noopener noreferrer"
         className="social-link"
       >
-        <FaSquareGithub className=" social-link text-gray-500 hover:text-black transition-all duration-700" />
+        <FaSquareGithub
+          size={24}
+          className=" social-link text-gray-500 hover:text-black transition-all duration-700"
+        />
       </a>
       <a
         href="https://www.instagram.com/piyush_.sengar/"
@@ -28,7 +34,10 @@ function SocalMedia() {
         rel="noopener noreferrer"
         className="social-link"
       >
-        <FaInstagramSquare className="social-link text-gray-500 hover:text-black transition-all duration-700" />
+        <FaInstagramSquare
+          size={24}
+          className="social-link text-gray-500 hover:text-black transition-all duration-700"
+        />
       </a>
     </div>
   );
