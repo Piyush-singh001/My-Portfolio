@@ -1,8 +1,6 @@
-import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
+import { CiDesktopMouse1 } from "react-icons/ci";
+import { IoIosSend } from "react-icons/io";
 import { FaArrowDown } from "react-icons/fa6";
-import { Padding } from "@mui/icons-material";
-import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
 function MyName() {
   return (
     <div className="my-name w-2/5 h-full ">
@@ -16,7 +14,8 @@ function MyName() {
       </p>
       <div className="mt-10 ">
         <a href="#contact">
-          <Button
+          <button
+            className=" bg-black text-white hover:bg-gray-800 transition-all duration-700 px-10 py-5 rounded-3xl flex items-center justify-center"
             sx={{
               borderRadius: "20px",
               backgroundColor: "gray",
@@ -31,14 +30,14 @@ function MyName() {
               fontSize: "16px",
             }}
             variant="contained"
-            endIcon={<SendIcon />}
+            endIcon={<IoIosSend className="w-20 bg-slate-50" />}
           >
             Contact Me
-          </Button>
+          </button>
         </a>
       </div>
       <div className="mt-60 text-gray-500 flex">
-        <MouseOutlinedIcon />
+        <CiDesktopMouse1 />
         Scroll Down <FaArrowDown className="ml-1 mt-1" />
       </div>
     </div>

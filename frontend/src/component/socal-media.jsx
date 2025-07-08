@@ -1,6 +1,6 @@
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaSquareGithub } from "react-icons/fa6";
 
 function SocalMedia() {
   return (
@@ -11,7 +11,7 @@ function SocalMedia() {
         rel="noopener noreferrer"
         className="social-link  text-gray-500 hover:text-black transition-all duration-700"
       >
-        <LinkedInIcon />
+        <FaLinkedin />
       </a>
       <a
         href="
@@ -20,7 +20,7 @@ function SocalMedia() {
         rel="noopener noreferrer"
         className="social-link"
       >
-        <GitHubIcon className=" social-link text-gray-500 hover:text-black transition-all duration-700" />
+        <FaSquareGithub className=" social-link text-gray-500 hover:text-black transition-all duration-700" />
       </a>
       <a
         href="https://www.instagram.com/piyush_.sengar/"
@@ -28,7 +28,7 @@ function SocalMedia() {
         rel="noopener noreferrer"
         className="social-link"
       >
-        <InstagramIcon className="social-link text-gray-500 hover:text-black transition-all duration-700" />
+        <FaInstagramSquare className="social-link text-gray-500 hover:text-black transition-all duration-700" />
       </a>
     </div>
   );
