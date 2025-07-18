@@ -3,12 +3,14 @@ import { IoIosSend } from "react-icons/io";
 import { FaArrowDown } from "react-icons/fa6";
 function MyName() {
   return (
-    <div className="my-name w-2/5 h-full ">
-      <h1 className="text-5xl font-bold text-gray-800 mb-4">
+    <div className="my-name md:w-2/5 w-full">
+      <h1 className="md:text-5xl text-3xl font-bold text-gray-800 mb-4">
         👋I'm <span>Piyush Singh</span>
       </h1>
-      <h3 className="text-gray-500 text-xl">_________Web Developer.</h3>
-      <p className="text-gray-500 mt-5">
+      <h3 className="text-gray-500 md:text-xl text-l">
+        _________Web Developer.
+      </h3>
+      <p className="text-gray-500 mt-5 text-sm">
         Building sleek interfaces. Writing clean code. MERN Developer | Always
         learning, always building.
       </p>
@@ -35,7 +37,7 @@ function MyName() {
           </button>
         </a>
       </div>
-      <div className="mt-60 text-gray-500 flex">
+      <div className="md:mt-60 mt-20 text-gray-500 flex">
         <CiDesktopMouse1 size={24} />
         Scroll Down <FaArrowDown className="ml-1 mt-1" />
       </div>

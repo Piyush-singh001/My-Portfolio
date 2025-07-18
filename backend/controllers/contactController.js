@@ -14,7 +14,7 @@ exports.sendContactEmail = async (req, res) => {
       pass: process.env.MY_PASS,
     },
     tls: {
-      rejectUnauthorized: false, // 👈 ADD THIS LINE
+      rejectUnauthorized: false,
     },
   });
 
@@ -26,7 +26,8 @@ exports.sendContactEmail = async (req, res) => {
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log(info);
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
     console.error("Error sending email:", error);

@@ -1,6 +1,6 @@
 function HeroImage() {
   return (
-    <div className="w-2/5 p-12">
+    <div className="hidden md:flex w-2/5 p-12">
       <div className="w-[400px] h-[400px] rounded-xl">
         <img
           src="/images/heroImage.png"

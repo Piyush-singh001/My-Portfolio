@@ -25,12 +25,14 @@ const skills = [
   { name: "GitHub", icon: <FaGithub className="text-black" /> },
 ];
 
-const SkillSection = () => {
+const SkillSections = () => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
+  const isDesktop = typeof window !== "undefined" && window.innerWidth >= 770;
 
   useEffect(() => {
-    if (window.innerWidth < 770) return;
+    if (!isDesktop) return;
+
     const scrollWidth = scrollRef.current.scrollWidth;
     const containerWidth = containerRef.current.clientWidth;
     const scrollLength = Math.max(0, scrollWidth - containerWidth);
@@ -51,31 +53,33 @@ const SkillSection = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isDesktop]);
 
   return (
     <section
       id="skills"
       ref={containerRef}
-      className="relative bg-white md:overflow-hidden w-screen"
+      className="relative bg-white w-screen overflow-x-hidden" // ✅ Prevent unwanted scroll
     >
       <h2 className="text-3xl font-bold text-center py-8 text-gray-800">
         My Skills
       </h2>
 
       <div
-        ref={scrollRef}
-        className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-nowrap gap-6 px-4 md:pr-16 pb-10 w-full"
+        ref={isDesktop ? scrollRef : null}
+        className={`${
+          isDesktop ? "md:flex" : "grid grid-cols-2 sm:grid-cols-3"
+        } gap-6 px-4 md:pr-16 pb-10 w-full`}
       >
         {skills.map((skill, i) => (
           <div
             key={i}
-            className="w-[100px] sm:w-[140px] md:w-[220px] h-[100px] sm:h-[140px] md:h-[220px]
-             flex-shrink-0 bg-gray-100 rounded-xl shadow-md 
-             flex flex-col items-center justify-center 
-             hover:scale-105 transition "
+            className="w-full md:w-[220px] h-[100px] md:h-[220px] 
+                       md:flex-shrink-0 bg-gray-100 rounded-xl shadow-md 
+                       flex flex-col items-center justify-center 
+                       hover:scale-105 transition"
           >
-            <div className="text-4xl mb-2">{skill.icon}</div>
+            <div className="text-2xl md:text-4xl mb-2">{skill.icon}</div>
             <p className="text-sm text-gray-700 text-center break-words">
               {skill.name}
             </p>
@@ -86,4 +90,4 @@ const SkillSection = () => {
   );
 };
 
-export default SkillSection;
+export default SkillSections;

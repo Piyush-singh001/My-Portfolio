@@ -2,12 +2,12 @@ function Project() {
   const projects = [
     {
       name: "E-commerce web site",
-      imageUrl: "/images/website1.png",
+      imageUrl: "/images/clothingPro.jpg",
       projectLink: "https://piyush-singh001.github.io/Ecommerce-website/",
     },
     {
       name: "Movie Trailor Search",
-      imageUrl: "/images/movie.png",
+      imageUrl: "/images/moviePro.jpg",
       projectLink: "https://movie-search-app-lhrb.vercel.app/",
     },
     {
@@ -25,12 +25,12 @@ function Project() {
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-20 pt-10">
+    <div className="grid md:grid-cols-2 md:gap-20 grid-cols-1 gap-3 pt-10 place-items-center">
       {projects.map((project, i) => (
         <div
           key={i}
-          className="w-[160px] sm:w-[180px] md:w-[400px] h-[400px] sm:h-[180px] md:h-[400px] 
-                       flex-shrink-0 bg-gray-100 rounded-xl shadow-md 
+          className="w-3/4 md:w-[400px] h-[35vh] md:h-[400px] 
+                       bg-gray-100 rounded-xl shadow-md 
                        hover:scale-105 transition"
         >
           <div className="text-4xl mb-2 p-2 rounded-2xl h-3/4">

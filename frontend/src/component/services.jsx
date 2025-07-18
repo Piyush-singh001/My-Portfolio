@@ -1,8 +1,40 @@
 import React from "react";
 import { FiLayout, FiCode, FiEdit3 } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function Services() {
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const crnterRef = useRef(null);
+
+  useEffect(() => {
+    const animate = (element) => {
+      if (!element) return;
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "top -30%",
+          toggleActions: "play play play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    };
+
+    animate(leftRef.current);
+    animate(crnterRef.current);
+    animate(rightRef.current);
+  }, []);
+
+  // Services data
+
   const services = [
     {
       icon: <FiLayout size={28} />,
@@ -33,7 +65,14 @@ function Services() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white h-[400px] rounded-xl border shadow-sm p-6 flex flex-col items-start px-20 py-28 hover:shadow-md transition"
+            ref={index === 0 ? leftRef : index === 1 ? crnterRef : rightRef}
+            className={`bg-white opacity-0 h-[400px] rounded-xl border shadow-sm p-6 flex flex-col items-start px-20 py-28 transition-transform ${
+              index === 0
+                ? "-translate-x-[50px]"
+                : index === 1
+                ? "translate-x-0"
+                : "translate-x-[50px]"
+            } hover:shadow-md transition`}
           >
             <div className="text-gray-800  mb-4">{service.icon}</div>
             <h3 className="text-lg font-medium text-gray-900">

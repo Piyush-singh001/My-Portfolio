@@ -6,6 +6,7 @@ import SpringString from "./component/spting";
 import SkillSection from "./component/skills";
 import Projects from "./component/projects";
 import Contact from "./component/contact";
+import SkillSections from "./component/ss";
 function App() {
   return (
     <div className="App scroll-smooth">

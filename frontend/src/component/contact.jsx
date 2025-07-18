@@ -29,7 +29,7 @@ export default function ContactForm() {
   return (
     <div
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center p-8"
+      className="min-h-screen w-full flex flex-col items-center justify-center p-8"
     >
       <h2 className="text-4xl font-bold text-gray-800 my-10">Contact Us</h2>
 
